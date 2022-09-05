@@ -135,6 +135,5 @@ export async function getHeader() {
     }`,
     true,
   )
-  console.log(entry)
   return entry.data?.headerCollection?.items?.[0]
 }
