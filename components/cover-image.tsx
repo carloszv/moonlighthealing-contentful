@@ -1,8 +1,10 @@
-import ContentfulImage from './contentful-image'
+import { ContentfulImage } from './contentful-image'
 import Link from 'next/link'
 import cn from 'classnames'
 
-export default function CoverImage({ title, url, slug }) {
+export type Props = { title: string; url: string; slug?: string }
+
+export const CoverImage = ({ title, url, slug }: Props) => {
   const image = (
     <ContentfulImage
       width={2000}

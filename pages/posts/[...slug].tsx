@@ -1,18 +1,25 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
+import { Container } from '../../components/container'
 import PostBody from '../../components/post-body'
 import MoreStories from '../../components/more-stories'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
+import { Header } from '../../components/header'
+import { PostHeader } from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
-import Layout from '../../components/layout'
+import { Layout } from '../../components/layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
+import { PostTitle } from '../../components/post-title'
 import { CMS_NAME } from '../../lib/constants'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 
-export default function Post({ post, morePosts, preview }) {
+type Props = {
+  post: any
+  morePosts: any
+  preview: boolean
+}
+
+const Post = ({ post, morePosts, preview }: Props) => {
   const router = useRouter()
 
   if (!router.isFallback && !post) {
@@ -51,8 +58,10 @@ export default function Post({ post, morePosts, preview }) {
   )
 }
 
-export async function getStaticProps({ params, preview = false }) {
-  const data = await getPostAndMorePosts(params.slug, preview)
+export default Post
+
+export const getStaticProps: GetStaticProps = async ({ params, preview = false }) => {
+  const data = await getPostAndMorePosts(params?.slug, preview)
 
   return {
     props: {
@@ -63,10 +72,10 @@ export async function getStaticProps({ params, preview = false }) {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const allPosts = await getAllPostsWithSlug()
   return {
-    paths: allPosts?.map(({ slug }) => `/posts/${slug}`) ?? [],
+    paths: allPosts?.map(({ slug }: any) => `/posts/${slug}`) ?? [],
     fallback: true,
   }
 }

@@ -12,12 +12,13 @@
     "date-fns": "2.28.0",
     "next": "latest",
     "prettier": "^2.7.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.14",
     "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
     "autoprefixer": "10.4.2",
     "contentful-import": "^7.8.7",
     "postcss": "8.4.5",
