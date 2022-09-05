@@ -10,7 +10,7 @@ import SectionSeparator from '../../components/section-separator'
 import { Layout } from '../../components/layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import { PostTitle } from '../../components/post-title'
-import { CMS_NAME } from '../../lib/constants'
+import { PROJECT_NAME } from '../../lib/constants'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 
 type Props = {
@@ -37,7 +37,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title} | {PROJECT_NAME}
                 </title>
                 <meta property="og:image" content={post.coverImage.url} />
               </Head>

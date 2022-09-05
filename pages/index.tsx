@@ -5,7 +5,7 @@ import { Intro } from '../components/intro'
 import { Layout } from '../components/layout'
 import { getAllPostsForHome, getHeader } from '../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+import { PROJECT_NAME } from '../lib/constants'
 import { Header } from '../components/header'
 import { HeaderProps } from '../types/Header'
 
@@ -24,7 +24,7 @@ const Index = ({ preview, allPosts, headerProps }: Props) => {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>{PROJECT_NAME}</title>
         </Head>
 
         <Container>
