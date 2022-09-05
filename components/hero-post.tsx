@@ -1,9 +1,18 @@
 import Link from 'next/link'
-import { Avatar } from '../components/avatar'
-import { DateComponent } from '../components/date'
-import { CoverImage } from '../components/cover-image'
+import { Avatar, Props as AvatarProps } from './avatar'
+import { DateComponent, Props as DateComponentProps } from './date'
+import { CoverImage, Props as CoverImageProps } from './cover-image'
 
-export default function HeroPost({ title, coverImage, date, excerpt, author, slug }) {
+export type PostProps = {
+  title: string
+  coverImage: CoverImageProps
+  date: DateComponentProps['dateString']
+  excerpt: string
+  author: AvatarProps
+  slug: string
+}
+
+export const HeroPost = ({ title, coverImage, date, excerpt, author, slug }: PostProps) => {
   return (
     <section>
       <div className="mb-8 md:mb-16">

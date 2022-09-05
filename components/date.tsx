@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 
-type Props = {
+export type Props = {
   dateString: string
 }
 

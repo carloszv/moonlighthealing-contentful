@@ -39,6 +39,6 @@
     "pages", "components"
   ],
   "exclude": [
-    "node_modules", "contentful", "lib", "docs", "public", "styles", "types" 
+    "node_modules", "contentful", "lib", "docs", "public", "styles", "types" , "assets"
   ]
 }

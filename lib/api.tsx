@@ -118,3 +118,23 @@ export async function getPostAndMorePosts(slug: string | string[] | undefined, p
     morePosts: extractPostEntries(entries),
   }
 }
+
+export async function getHeader() {
+  const entry = await fetchGraphQL(
+    `query {
+      headerCollection(where: {logo_exists: true}, order: title_ASC) {
+        items {
+          title
+          menu
+          logo {
+            description
+            url
+          }
+        }
+      }
+    }`,
+    true,
+  )
+  console.log(entry)
+  return entry.data?.headerCollection?.items?.[0]
+}
