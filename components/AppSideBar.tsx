@@ -34,17 +34,18 @@ export const AppSidebar = (props: Props) => {
           </SidebarCloseIcon>
         </SidebarHeader>
         {defaultSidebarItems.map((item) => (
-          <SidebarItem
-            key={item.label}
-            onClick={() => {
-              if (item.link) {
-                router.push(`/${item.link}` || '/')
-              }
-            }}
-          >
-            <p>{item.label}</p>
-            <img src="/chevron.svg" alt="arrow" />
-          </SidebarItem>
+          <div key={item.label}>
+            <SidebarItem
+              onClick={() => {
+                if (item.link) {
+                  router.push(`/${item.link}` || '/')
+                }
+              }}
+            >
+              <p>{item.label}</p>
+              <img src="/chevron.svg" alt="arrow" />
+            </SidebarItem>
+          </div>
         ))}
       </SidebarWrapper>
     </>
