@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { AppHeader } from '../components/AppHeader'
 import { Container } from '../components/container'
-import { Layout } from '../components/layout'
+import { Layout } from '../components/Layout'
 import { HomePageTemplate } from '../components/templates/HomePage.template'
 import { getHomePage } from '../lib/api'
 import { PROJECT_NAME } from '../lib/constants'

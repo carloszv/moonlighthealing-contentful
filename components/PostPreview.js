@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { Avatar } from './avatar'
+import { Avatar } from './Avatar'
 import { CoverImage } from './CoverImage'
 import { DateComponent } from './date'
 

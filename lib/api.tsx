@@ -65,14 +65,10 @@ async function fetchGraphQL(query: string, preview = false) {
 }
 
 function extractPost(fetchResponse: any) {
-  console.log(fetchResponse?.data?.postCollection)
   return fetchResponse?.data?.postCollection?.items?.[0]
 }
 
 function extractPostEntries(fetchResponse: any) {
-  console.log(fetchResponse?.data?.postCollection?.items[0].coverImage)
-  console.log(fetchResponse?.data?.postCollection?.items[0].author)
-  console.log(fetchResponse?.data?.postCollection?.items[0].content)
   return fetchResponse?.data?.postCollection?.items
 }
 

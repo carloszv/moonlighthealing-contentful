@@ -1,4 +1,4 @@
-import { Avatar } from './avatar'
+import { Avatar } from './Avatar'
 import { DateComponent } from './date'
 import { CoverImage } from './CoverImage'
 import { PostTitle } from './PostTitle'

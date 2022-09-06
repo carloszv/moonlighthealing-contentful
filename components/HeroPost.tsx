@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Avatar } from './avatar'
+import { Avatar } from './Avatar'
 import { DateComponent, Props as DateComponentProps } from './date'
 import { CoverImage } from './CoverImage'
 import { Post } from '../types/Post'
