@@ -4,7 +4,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { PROJECT_NAME } from '../lib/constants'
 import { HeaderProps } from '../types/Header'
-import { AppSidebar } from './AppSideBars'
+import { AppSidebar } from './AppSideBar'
 import { ContentfulImage } from './ContentfulImage'
 
 export const AppHeader = (props: HeaderProps) => {
