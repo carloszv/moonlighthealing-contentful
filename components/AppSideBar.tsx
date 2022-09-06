@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import styled, { keyframes } from 'styled-components'
+import { Colors } from '../theme/Colors'
 import { ContentfulImage } from './ContentfulImage'
 
 export type SidebarItem = {
@@ -34,6 +35,7 @@ export const AppSidebar = (props: Props) => {
         </SidebarHeader>
         {defaultSidebarItems.map((item) => (
           <SidebarItem
+            key={item.label}
             onClick={() => {
               if (item.link) {
                 router.push(`/${item.link}` || '/')
@@ -83,23 +85,15 @@ const SidebarWrapper = styled.div<{ open: boolean }>`
   z-index: 100;
 `
 
-const SidebarItem = styled.div<{ type?: string }>`
+const SidebarItem = styled.div`
   align-items: center;
-  border-bottom: 1px solid var(--neutral-gray-2);
+  border-bottom: 1px solid ${Colors.Primary};
   cursor: pointer;
   display: flex;
   height: 64px;
   justify-content: space-between;
   padding: 0 24px;
   transition: background 0.2s;
-
-  :hover {
-    background: var(--neutral-gray-2);
-  }
-
-  p {
-    color: ${({ type }) => (type === 'danger' ? 'var(--error-red-1)' : 'var(--ion-text-color)')};
-  }
 
   img {
     width: 8px;
@@ -109,7 +103,7 @@ const SidebarItem = styled.div<{ type?: string }>`
 
 const SidebarHeader = styled.div`
   align-items: center;
-  border-bottom: 1px solid var(--neutral-gray-2);
+  border-bottom: 1px solid ${Colors.Primary};
   display: flex;
   height: 72px;
   width: 100%;
@@ -128,7 +122,7 @@ const SidebarFooter = styled.div`
 
 const SidebarCloseIcon = styled.div`
   align-items: center;
-  border-radius: var(--card-border-radius);
+  border-radius: 20px;
   cursor: pointer;
   display: flex;
   height: 36px;
@@ -136,10 +130,6 @@ const SidebarCloseIcon = styled.div`
   opacity: 0.7;
   transition: background 0.2s;
   width: 36px;
-
-  :hover {
-    background-color: var(--neutral-gray-2);
-  }
 
   img {
     width: 20px;

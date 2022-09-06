@@ -1,12 +1,6 @@
-import Image, { ImageProps } from 'next/image'
+import Image, { ImageLoaderProps, ImageProps } from 'next/image'
 
-type Props = {
-  src: string
-  width: number
-  quality?: number
-}
-
-const contentfulLoader = ({ src, width, quality }: Props) => {
+const contentfulLoader = ({ src, width, quality }: ImageLoaderProps) => {
   return `${src}?w=${width}&q=${quality || 75}`
 }
 
