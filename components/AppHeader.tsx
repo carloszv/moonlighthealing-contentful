@@ -4,23 +4,23 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { PROJECT_NAME } from '../lib/constants'
 import { HeaderProps } from '../types/Header'
-import { AppSidebar } from './appSideBar'
+import { AppSidebar } from './AppSideBar'
 import { ContentfulImage } from './ContentfulImage'
 
 export const AppHeader = (props: HeaderProps) => {
-  const { title, showMenu, showLogo, sidebarItems } = props
+  const { title, showMenu, showLogo } = props
   const size = 288
 
   const [showSidebar, setShowSidebar] = useState(false)
 
   return (
     <HeaderWrapper>
-      {sidebarItems && sidebarItems.length > 0 && (
-        <AppSidebar open={showSidebar} close={() => setShowSidebar(false)} sidebarItems={sidebarItems} />
-      )}
+      <AppSidebar open={showSidebar} close={() => setShowSidebar(false)} />
       {showLogo && (
-        <ImageWrapper href="/">
-          <ContentfulImage src="/logo.svg" alt={PROJECT_NAME} width={size} height={size} />
+        <ImageWrapper>
+          <Link href="/">
+            <ContentfulImage src="/logo.svg" alt={PROJECT_NAME} width={size} height={size} />
+          </Link>
         </ImageWrapper>
       )}
       {showMenu && (
@@ -44,6 +44,6 @@ const Menu = styled.div`
   cursor: pointer;
 `
 
-const ImageWrapper = styled(Link)`
+const ImageWrapper = styled.div`
   cursor: pointer;
 `

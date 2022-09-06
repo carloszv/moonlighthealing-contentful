@@ -1,7 +1,7 @@
 import { Avatar } from './avatar'
 import { DateComponent } from './date'
 import { CoverImage } from './CoverImage'
-import { PostTitle } from './post-title'
+import { PostTitle } from './PostTitle'
 import { CoverImage as CoverImageProps } from '../types/CoverImage'
 import { Author } from '../types/Author'
 

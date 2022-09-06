@@ -7,7 +7,7 @@ import { AppHeader } from '../../components/AppHeader'
 import { Container } from '../../components/container'
 import { Layout } from '../../components/layout'
 import { MoreStories } from '../../components/MoreStories'
-import { PostTitle } from '../../components/post-title'
+import { PostTitle } from '../../components/PostTitle'
 import { PostBody } from '../../components/PostBody'
 import { PostHeader } from '../../components/PostHeader'
 import SectionSeparator from '../../components/section-separator'
@@ -30,7 +30,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
   return (
     <Layout preview={preview}>
       <Container>
-        <AppHeader showLogo={true} />
+        <AppHeader showLogo={true} showMenu={true} />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -51,7 +51,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
               <PostBody {...post.content} />
             </article>
             <SectionSeparator />
-            {morePosts && morePosts.length > 0 && <MoreStories {...morePosts} />}
+            {morePosts && morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
       </Container>

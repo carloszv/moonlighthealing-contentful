@@ -27,7 +27,7 @@ const Posts = ({ preview, allPosts }: Props) => {
         </Head>
 
         <Container>
-          <AppHeader showMenu={true} showLogo={false} sidebarItems={sidebarItems} />
+          <AppHeader showMenu={true} showLogo={true} />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -38,7 +38,7 @@ const Posts = ({ preview, allPosts }: Props) => {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories {...morePosts} />}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>
     </>
