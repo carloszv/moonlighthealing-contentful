@@ -1,17 +1,18 @@
-import { useRouter } from 'next/router'
-import Head from 'next/head'
-import ErrorPage from 'next/error'
-import { Container } from '../../components/container'
-import PostBody from '../../components/post-body'
-import MoreStories from '../../components/more-stories'
-import { Header } from '../../components/postHeader'
-import { PostHeader } from '../../components/post-header'
-import SectionSeparator from '../../components/section-separator'
-import { Layout } from '../../components/layout'
-import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import { PostTitle } from '../../components/post-title'
-import { PROJECT_NAME } from '../../lib/constants'
 import type { GetStaticPaths, GetStaticProps } from 'next'
+import ErrorPage from 'next/error'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+
+import { AppHeader } from '../../components/AppHeader'
+import { Container } from '../../components/container'
+import { Layout } from '../../components/layout'
+import { MoreStories } from '../../components/MoreStories'
+import { PostTitle } from '../../components/post-title'
+import { PostBody } from '../../components/PostBody'
+import { PostHeader } from '../../components/PostHeader'
+import SectionSeparator from '../../components/section-separator'
+import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
+import { PROJECT_NAME } from '../../lib/constants'
 
 type Props = {
   post: any
@@ -29,7 +30,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
+        <AppHeader showLogo={true} />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -47,10 +48,10 @@ const Post = ({ post, morePosts, preview }: Props) => {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody {...post.content} />
             </article>
             <SectionSeparator />
-            {morePosts && morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            {morePosts && morePosts.length > 0 && <MoreStories {...morePosts} />}
           </>
         )}
       </Container>

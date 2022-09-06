@@ -1,8 +1,7 @@
-import { ContentfulImage } from './contentful-image'
+import { Author } from '../types/Author'
+import { ContentfulImage } from './ContentfulImage'
 
-export type Props = { name: string; picture: { url: string } }
-
-export const Avatar = ({ name, picture }: Props) => {
+export const Avatar = ({ name, picture }: Author) => {
   return (
     <div className="flex items-center">
       <div className="relative w-12 h-12 mr-4">

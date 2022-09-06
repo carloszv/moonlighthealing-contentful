@@ -36,9 +36,9 @@
     ],
   },
   "include": [
-    "pages", "components"
+    "pages", "components", "types"
   ],
   "exclude": [
-    "node_modules", "contentful", "lib", "docs", "public", "styles", "types" , "assets"
+    "node_modules", "contentful", "lib", "docs", "public", "styles" , "assets"
   ]
 }

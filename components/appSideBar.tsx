@@ -1,44 +1,72 @@
 import styled, { keyframes } from 'styled-components'
 import { useRouter } from 'next/router'
-import { ContentfulImage } from './contentful-image'
+import { ContentfulImage } from './ContentfulImage'
+import { useState } from 'react'
 
 export type SidebarItem = {
   label: string
-  link: string
+  link?: string
+  onClick?: () => void
 }
 
 type Props = {
   open: boolean
   close: () => void
-  sidebarItems: Array<SidebarItem>
+  sidebarItems?: Array<SidebarItem>
 }
 
 export const AppSidebar = (props: Props) => {
   const router = useRouter()
+  const [showPosts, setShowPosts] = useState(false)
+
+  const defaultSidebarItems = [
+    { label: 'Posts', onClick: () => setShowPosts(true) },
+    { label: 'About me', link: '/about' },
+  ]
+
   return (
     <>
       {props.open && <OpacityScreen onClick={props.close} />}
 
       <SidebarWrapper open={props.open}>
         <SidebarHeader>
-          <SidebarCloseIcon onClick={props.close} data-test-id="sidebar-close">
+          <SidebarCloseIcon
+            onClick={showPosts ? () => setShowPosts(false) : props.close}
+            data-test-id="sidebar-close"
+          >
             <ContentfulImage src="/close.svg" width={24} height={24} alt="Close" />
           </SidebarCloseIcon>
         </SidebarHeader>
-
-        {props.sidebarItems.map((item, key) => (
-          <SidebarItem
-            key={key}
-            onClick={() => {
-              if (item.link) {
-                router.push(`/posts/${item.link}` || '/')
-              }
-            }}
-          >
-            <p>{item.label}</p>
-            <img src="/chevron.svg" alt="arrow" />
-          </SidebarItem>
-        ))}
+        {showPosts
+          ? props.sidebarItems?.map((item, key) => (
+              <SidebarItem
+                key={key}
+                onClick={() => {
+                  if (item.link) {
+                    router.push(`/posts/${item.link}` || '/')
+                  }
+                }}
+              >
+                <p>{item.label}</p>
+                <img src="/chevron.svg" alt="arrow" />
+              </SidebarItem>
+            ))
+          : defaultSidebarItems.map((item) => (
+              <SidebarItem
+                onClick={() => {
+                  if (item.link) {
+                    console.log('IF', item.label)
+                    router.push(`/${item.link}` || '/')
+                  } else if (item.onClick) {
+                    console.log('ELSE IF', item.label)
+                    item.onClick()
+                  }
+                }}
+              >
+                <p>{item.label}</p>
+                <img src="/chevron.svg" alt="arrow" />
+              </SidebarItem>
+            ))}
       </SidebarWrapper>
     </>
   )

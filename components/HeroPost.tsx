@@ -1,18 +1,10 @@
 import Link from 'next/link'
-import { Avatar, Props as AvatarProps } from './avatar'
+import { Avatar } from './avatar'
 import { DateComponent, Props as DateComponentProps } from './date'
-import { CoverImage, Props as CoverImageProps } from './cover-image'
+import { CoverImage } from './CoverImage'
+import { Post } from '../types/Post'
 
-export type PostProps = {
-  title: string
-  coverImage: CoverImageProps
-  date: DateComponentProps['dateString']
-  excerpt: string
-  author: AvatarProps
-  slug: string
-}
-
-export const HeroPost = ({ title, coverImage, date, excerpt, author, slug }: PostProps) => {
+export const HeroPost = ({ title, coverImage, date, excerpt, author, slug }: Omit<Post, 'content'>) => {
   return (
     <section>
       <div className="mb-8 md:mb-16">

@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import { Avatar } from '../components/avatar'
-import { DateComponent } from '../components/date'
-import { CoverImage } from './cover-image'
+
+import { Avatar } from './avatar'
+import { CoverImage } from './CoverImage'
+import { DateComponent } from './date'
 
 export default function PostPreview({ title, coverImage, date, excerpt, author, slug }) {
   return (

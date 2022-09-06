@@ -1,4 +1,4 @@
-import { Alert } from './alert'
+import { Alert } from './Alert'
 import { Footer } from './footer'
 import { Meta } from './meta'
 

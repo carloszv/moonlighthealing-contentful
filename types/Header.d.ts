@@ -1,8 +1,8 @@
+import { SidebarItem } from '../components/appSideBar'
+
 export type HeaderProps = {
-  title: string
-  menu: boolean
-  logo: {
-    description: string
-    url: string
-  }
+  title?: string
+  showMenu?: boolean
+  showLogo?: boolean
+  sidebarItems?: Array<SidebarItem>
 }

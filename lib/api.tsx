@@ -28,6 +28,29 @@ content {
 }
 `
 
+const HOME_PAGE = `
+home(id: "zJYJHj8Z59zP6ymGEfq6x") {
+  title
+  content {
+    json
+    links {
+      assets {
+        block {
+          sys {
+            id
+          }
+          url
+          description
+        }
+      }
+    }
+  }
+  coverImage {
+    url
+  }
+}
+`
+
 async function fetchGraphQL(query: string, preview = false) {
   return fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`, {
     method: 'POST',
@@ -42,10 +65,14 @@ async function fetchGraphQL(query: string, preview = false) {
 }
 
 function extractPost(fetchResponse: any) {
+  console.log(fetchResponse?.data?.postCollection)
   return fetchResponse?.data?.postCollection?.items?.[0]
 }
 
 function extractPostEntries(fetchResponse: any) {
+  console.log(fetchResponse?.data?.postCollection?.items[0].coverImage)
+  console.log(fetchResponse?.data?.postCollection?.items[0].author)
+  console.log(fetchResponse?.data?.postCollection?.items[0].content)
   return fetchResponse?.data?.postCollection?.items
 }
 
@@ -136,4 +163,14 @@ export async function getHeader() {
     true,
   )
   return entry.data?.headerCollection?.items?.[0]
+}
+
+export async function getHomePage() {
+  const entry = await fetchGraphQL(
+    `query {
+      ${HOME_PAGE}
+    }`,
+    true,
+  )
+  return entry.data?.home
 }

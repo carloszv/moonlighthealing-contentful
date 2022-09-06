@@ -1,6 +1,7 @@
-import PostPreview from '../components/post-preview'
+import { Post } from '../types/Post'
+import PostPreview from './PostPreview'
 
-export default function MoreStories({ posts }) {
+export const MoreStories = (posts: Array<Omit<Post, 'content'>>) => {
   return (
     <section>
       <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
