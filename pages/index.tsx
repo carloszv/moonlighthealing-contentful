@@ -3,13 +3,18 @@ import Head from 'next/head'
 import { AppHeader } from '../components/AppHeader'
 import { Container } from '../components/container'
 import { Layout } from '../components/Layout'
+import { BioPageTemplate } from '../components/templates/BioPage.template'
 import { HomePageTemplate } from '../components/templates/HomePage.template'
 import { getHomePage } from '../lib/api'
 import { PROJECT_NAME } from '../lib/constants'
+import { Home } from '../types/Home'
 
 type Props = {
   preview: any
-  content: any
+  content: {
+    home: Home
+    bio: Home
+  }
 }
 
 const Index = ({ preview, content }: Props) => (
@@ -20,7 +25,8 @@ const Index = ({ preview, content }: Props) => (
 
     <Container>
       <AppHeader showMenu={true} showLogo={false} />
-      <HomePageTemplate {...content} />
+      <HomePageTemplate {...content.home} />
+      <BioPageTemplate {...content.bio} />
     </Container>
   </Layout>
 )
@@ -30,7 +36,5 @@ export default Index
 export async function getStaticProps({ preview = false }) {
   const content = (await getHomePage()) ?? null
 
-  return {
-    props: { preview, content },
-  }
+  return { props: { preview, content } }
 }

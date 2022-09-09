@@ -50,6 +50,28 @@ home(id: "zJYJHj8Z59zP6ymGEfq6x") {
   }
 }
 `
+const BIO_PAGE = `
+bio(id: "57ilqEjJriTQFMyhY2h2xT") {
+  title
+  content {
+    json
+    links {
+      assets {
+        block {
+          sys {
+            id
+          }
+          url
+          description
+        }
+      }
+    }
+  }
+  coverImage {
+    url
+  }
+}
+`
 
 async function fetchGraphQL(query: string, preview = false) {
   return fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`, {
@@ -162,11 +184,22 @@ export async function getHeader() {
 }
 
 export async function getHomePage() {
-  const entry = await fetchGraphQL(
+  const entryHome = await fetchGraphQL(
     `query {
       ${HOME_PAGE}
     }`,
     true,
   )
-  return entry.data?.home
+
+  const entryBio = await fetchGraphQL(
+    `query {
+      ${BIO_PAGE}
+    }`,
+    true,
+  )
+
+  return {
+    home: { ...entryHome.data?.home },
+    bio: { ...entryBio.data?.bio },
+  }
 }
