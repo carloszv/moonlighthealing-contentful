@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { PROJECT_NAME } from '../lib/constants'
@@ -14,9 +14,21 @@ export const AppHeader = (props: HeaderProps) => {
 
   const [showSidebar, setShowSidebar] = useState(false)
 
+  const [small, setSmall] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () => setSmall(window.pageYOffset > 300))
+    }
+  }, [])
+
   return (
-    <HeaderWrapper>
-      <AppSidebar open={showSidebar} close={() => setShowSidebar(false)} />
+    <HeaderWrapper small>
+      <AppSidebar
+        open={showSidebar}
+        close={() => setShowSidebar(false)}
+        currentPage={props.currentPage}
+      />
       {showLogo && (
         <ImageWrapper>
           <Link href="/">
@@ -33,9 +45,15 @@ export const AppHeader = (props: HeaderProps) => {
   )
 }
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.div<{ small: boolean }>`
   display: flex;
-  min-height: 100px;
+  min-height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 20px;
+
+  background-color: ${({ small }) => small && 'white'};
 `
 
 const Menu = styled.div`
