@@ -8,10 +8,7 @@ type Props = {
   imageSrc: string
   title: string
   subtitle: string
-  button: {
-    label: string
-    src: string
-  }
+  slug: string
 }
 
 export const HeroImage = (props: Props) => {
@@ -19,13 +16,13 @@ export const HeroImage = (props: Props) => {
   const router = useRouter()
 
   const gotoPage = () => {
-    router.push(`/posts/${props.button.src}`)
+    router.push(`/posts/${props.slug}`)
   }
   return (
     <section>
       <ImageContainer onClick={gotoPage}>
         <HoverOverlay>
-          <CoverImage title={props.title} slug={props.button.src} url={props.imageSrc} />
+          <CoverImage title={props.title} slug={props.slug} url={props.imageSrc} />
           <HoverContainer>
             <HoverContent>
               <Title>{props.title}</Title>

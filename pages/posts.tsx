@@ -1,7 +1,6 @@
 import { AppHeader } from '../components/AppHeader'
 import { Container } from '../components/container'
 import { HeroImage } from '../components/HeroImage'
-import { HeroPost } from '../components/HeroPost'
 import { MoreStories } from '../components/MoreStories'
 import { Title } from '../components/Title'
 import { getAllPostsForHome } from '../lib/api'
@@ -28,10 +27,7 @@ const Posts = ({ preview, allPosts, showheader = true }: Props) => {
             imageSrc={heroPost.coverImage.url}
             title={heroPost.title}
             subtitle={heroPost.excerpt}
-            button={{
-              label: 'Check it out!',
-              src: heroPost.slug,
-            }}
+            slug={heroPost.slug}
           />
         </>
       ) : null}
