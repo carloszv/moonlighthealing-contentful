@@ -12,7 +12,6 @@ type Props = {
 }
 
 export const HeroImage = (props: Props) => {
-  console.log('props', props)
   const router = useRouter()
 
   const gotoPage = () => {
