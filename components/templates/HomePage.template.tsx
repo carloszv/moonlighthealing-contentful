@@ -53,7 +53,7 @@ export const HomePageTemplate = (props: Props) => {
         </PageListWrapper>
       </Container>
 
-      <Posts preview={false} allPosts={props.allPosts} />
+      <Posts preview={false} allPosts={props.allPosts} showheader={false} />
     </section>
   )
 }

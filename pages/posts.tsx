@@ -1,26 +1,24 @@
-import Head from 'next/head'
-
 import { AppHeader } from '../components/AppHeader'
 import { Container } from '../components/container'
 import { HeroPost } from '../components/HeroPost'
-import { Layout } from '../components/Layout'
 import { MoreStories } from '../components/MoreStories'
 import { getAllPostsForHome } from '../lib/api'
-import { PROJECT_NAME } from '../lib/constants'
 import { Post } from '../types/Post'
 
 type Props = {
   preview: any
   allPosts: any
+  showheader: boolean
 }
 
-const Posts = ({ preview, allPosts }: Props) => {
+const Posts = ({ preview, allPosts, showheader = true }: Props) => {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
 
   const sidebarItems = allPosts.map((post: Post) => ({ label: post.title, link: post.slug }))
   return (
     <Container>
+      {showheader ? <AppHeader showMenu={true} showLogo={true} currentPage={'posts'} /> : null}
       {heroPost && (
         <HeroPost
           title={heroPost.title}
