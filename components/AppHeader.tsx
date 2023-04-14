@@ -9,6 +9,7 @@ import { AppSidebar } from './AppSideBar'
 import { ContentfulImage } from './ContentfulImage'
 
 export const AppHeader = (props: HeaderProps) => {
+  const router = useRouter()
   const { title, showMenu, showLogo } = props
   const size = 288
 
@@ -30,10 +31,8 @@ export const AppHeader = (props: HeaderProps) => {
         currentPage={props.currentPage}
       />
       {showLogo && (
-        <ImageWrapper>
-          <Link href="/">
-            <ContentfulImage src="/logo.svg" alt={PROJECT_NAME} width={size} height={size} />
-          </Link>
+        <ImageWrapper onClick={() => router.push('/')}>
+          <ContentfulImage src="/logo.svg" alt={PROJECT_NAME} width={size} height={size} />
         </ImageWrapper>
       )}
       {showMenu && (
