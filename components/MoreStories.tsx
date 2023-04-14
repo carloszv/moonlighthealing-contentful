@@ -1,8 +1,6 @@
-import styled from 'styled-components'
-import { FontColors } from '../theme/Colors'
-
 import { Post } from '../types/Post'
 import PostPreview from './PostPreview'
+import { Title } from './Title'
 
 type Props = {
   posts: Array<Omit<Post, 'content'>>
@@ -28,14 +26,3 @@ export const MoreStories = (props: Props) => {
     </section>
   )
 }
-
-const Title = styled.div`
-  padding: 20px 0px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  place-content: center;
-  font-size: 48px;
-  color: ${FontColors.Tertiary};
-  font-weight: 400;
-`
