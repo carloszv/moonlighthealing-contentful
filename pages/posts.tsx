@@ -19,7 +19,7 @@ const Posts = ({ preview, allPosts, showheader = true }: Props) => {
   const sidebarItems = allPosts.map((post: Post) => ({ label: post.title, link: post.slug }))
   return (
     <Container>
-      {showheader ? <AppHeader showMenu={true} showLogo={true} currentPage={'posts'} /> : null}
+      {showheader ? <AppHeader showMenu={false} showLogo={true} currentPage={'posts'} /> : null}
       {heroPost ? (
         <>
           <Title>Last Story</Title>

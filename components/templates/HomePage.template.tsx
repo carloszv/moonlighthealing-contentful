@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import Posts from 'posts'
 import styled from 'styled-components'
 import { Colors, FontColors } from '../../theme/Colors'
@@ -18,11 +17,6 @@ export type Props = {
 }
 
 export const HomePageTemplate = (props: Props) => {
-  const router = useRouter()
-
-  const gotoPage = (id: string) => {
-    router.push('/posts/' + id)
-  }
   return (
     <section>
       <Container>

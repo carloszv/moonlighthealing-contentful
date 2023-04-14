@@ -36,7 +36,7 @@ const Index = ({ preview, content, allPosts }: Props) => {
         </Head>
 
         <Container>
-          <AppHeader showMenu={true} showLogo={true} currentPage={'home'} />
+          <AppHeader showMenu={false} showLogo={true} currentPage={'home'} />
           <HomePageTemplate homeContent={pageContent} pageList={pageList} allPosts={allPosts} />
         </Container>
       </Layout>

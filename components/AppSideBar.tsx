@@ -19,7 +19,6 @@ type Props = {
 const defaultSidebarItems = [
   { label: 'Home', link: '/' },
   { label: 'Posts', link: 'posts' },
-  { label: 'About me', link: 'about' },
 ]
 
 export const AppSidebar = (props: Props) => {

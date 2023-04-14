@@ -30,7 +30,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
   return (
     <Layout preview={preview}>
       <Container>
-        <AppHeader showLogo={true} showMenu={true} currentPage={'posts'} />
+        <AppHeader showLogo={true} showMenu={false} currentPage={'posts'} />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (

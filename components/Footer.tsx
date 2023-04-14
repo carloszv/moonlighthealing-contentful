@@ -5,6 +5,7 @@ import { FontColors } from '../theme/Colors'
 import { FacebookLogo } from './Icons/FacebookLogo'
 import { InstagramLogo } from './Icons/InstagramLogo'
 import { TwitterLogo } from './Icons/TwitterLogo'
+import { MobileStyle } from '../theme/MediaQuery'
 
 export const Footer = () => {
   return (
@@ -51,4 +52,8 @@ const FooterSocialIcons = styled.div`
 const FooterText = styled.div`
   color: ${FontColors.Tertiary};
   font-weight: 400;
+
+  @media ${MobileStyle} {
+    text-align: right;
+  }
 `

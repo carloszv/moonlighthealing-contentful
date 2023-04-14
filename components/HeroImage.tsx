@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { CoverImage } from './CoverImage'
 import { Title } from './Title'
 import { FontColors } from '../theme/Colors'
+import { MobileStyle } from '../theme/MediaQuery'
 
 type Props = {
   imageSrc: string
@@ -49,6 +50,18 @@ const HoverContent = styled.div`
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   text-align: center;
+
+  @media ${MobileStyle} {
+    > div {
+      font-size: 32px;
+    }
+
+    > p {
+      font-size: 12px;
+    }
+
+    opacity: 1;
+  }
 `
 
 const Subtitle = styled.p`
@@ -67,6 +80,10 @@ const HoverContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
+
+  @media ${MobileStyle} {
+    opacity: 1;
+  }
 `
 
 const HoverOverlay = styled.div`
