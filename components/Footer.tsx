@@ -1,31 +1,26 @@
 import styled from 'styled-components'
-import { EXAMPLE_PATH } from '../lib/constants'
 import { Container } from './container'
+
+import { FontColors } from '../theme/Colors'
+import { FacebookLogo } from './Icons/FacebookLogo'
+import { InstagramLogo } from './Icons/InstagramLogo'
+import { TwitterLogo } from './Icons/TwitterLogo'
 
 export const Footer = () => {
   return (
     <FooterWrapper>
       <footer className="bg-accent-1 border-t border-accent-2 mt-50">
         <Container>
-          <div className="py-28 flex flex-col lg:flex-row items-center">
-            <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-              Statically Generated with Next.js.
-            </h3>
-            <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-              <a
-                href="https://nextjs.org/docs/basic-features/pages"
-                className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-              >
-                Read Documentation
-              </a>
-              <a
-                href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-                className="mx-3 font-bold hover:underline"
-              >
-                View on GitHub
-              </a>
-            </div>
-          </div>
+          <FooterContainer>
+            <FooterSocialIcons>
+              <FacebookLogo />
+              <TwitterLogo />
+              <InstagramLogo />
+            </FooterSocialIcons>
+            <FooterText>
+              <p>&copy; 2023 Moonlight Healing. All rights reserved.</p>
+            </FooterText>
+          </FooterContainer>
         </Container>
       </footer>
     </FooterWrapper>
@@ -34,4 +29,26 @@ export const Footer = () => {
 
 const FooterWrapper = styled.div`
   margin-top: 50px;
+`
+
+const FooterContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+`
+
+const FooterSocialIcons = styled.div`
+  display: flex;
+  a {
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+  }
+`
+
+const FooterText = styled.div`
+  color: ${FontColors.Tertiary};
+  font-weight: 400;
 `
