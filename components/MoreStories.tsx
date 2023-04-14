@@ -1,3 +1,6 @@
+import styled from 'styled-components'
+import { FontColors } from '../theme/Colors'
+
 import { Post } from '../types/Post'
 import PostPreview from './PostPreview'
 
@@ -8,9 +11,7 @@ type Props = {
 export const MoreStories = (props: Props) => {
   return (
     <section>
-      <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
-        More Stories
-      </h2>
+      <Title>More Stories</Title>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
         {props.posts.map((post) => (
           <PostPreview
@@ -27,3 +28,14 @@ export const MoreStories = (props: Props) => {
     </section>
   )
 }
+
+const Title = styled.div`
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  place-content: center;
+  font-size: 48px;
+  color: ${FontColors.Tertiary};
+  font-weight: 400;
+`

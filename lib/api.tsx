@@ -1,4 +1,7 @@
 const POST_GRAPHQL_FIELDS = `
+sys {
+  id
+}
 slug
 title
 coverImage {
@@ -47,6 +50,64 @@ home(id: "zJYJHj8Z59zP6ymGEfq6x") {
   }
   coverImage {
     url
+  }
+  pageCollection {
+    items {
+      sys {
+        id
+      }
+    }
+  }
+}
+`
+const BIO_PAGE = `
+bio(id: "57ilqEjJriTQFMyhY2h2xT") {
+  title
+  content {
+    json
+    links {
+      assets {
+        block {
+          sys {
+            id
+          }
+          url
+          description
+        }
+      }
+    }
+  }
+  coverImage {
+    url
+  }
+}
+`
+
+const PAGE_COLLECTION = `
+pageCollection {
+  items {
+    sys {
+      id
+    }
+    title
+    description
+    coverImage {
+      url
+    }
+    content {
+      json
+      links {
+        assets {
+          block {
+            sys {
+              id
+            }
+            url
+            description
+          }
+        }
+      }
+    }
   }
 }
 `
@@ -162,11 +223,18 @@ export async function getHeader() {
 }
 
 export async function getHomePage() {
-  const entry = await fetchGraphQL(
+  const entryHome = await fetchGraphQL(
     `query {
       ${HOME_PAGE}
+      ${PAGE_COLLECTION}
     }`,
     true,
   )
-  return entry.data?.home
+
+  console.log('home data', { ...entryHome.data })
+
+  return {
+    home: { ...entryHome.data?.home },
+    pages: entryHome.data?.pageCollection.items,
+  }
 }

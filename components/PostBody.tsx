@@ -26,4 +26,5 @@ export const PostBody = (content: PostProps['content']) => {
 
 const TextWrapper = styled.div`
   text-align: justify;
+  width: 80%;
 `

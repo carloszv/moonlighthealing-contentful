@@ -20,28 +20,19 @@ const Posts = ({ preview, allPosts }: Props) => {
 
   const sidebarItems = allPosts.map((post: Post) => ({ label: post.title, link: post.slug }))
   return (
-    <>
-      <Layout preview={preview}>
-        <Head>
-          <title>{PROJECT_NAME}</title>
-        </Head>
-
-        <Container>
-          <AppHeader showMenu={true} showLogo={true} />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
-      </Layout>
-    </>
+    <Container>
+      {heroPost && (
+        <HeroPost
+          title={heroPost.title}
+          coverImage={heroPost.coverImage}
+          date={heroPost.date}
+          author={heroPost.author}
+          slug={heroPost.slug}
+          excerpt={heroPost.excerpt}
+        />
+      )}
+      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+    </Container>
   )
 }
 

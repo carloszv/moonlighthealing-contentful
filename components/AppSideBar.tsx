@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import styled, { keyframes } from 'styled-components'
-import { Colors } from '../theme/Colors'
+import { Colors, FontColors } from '../theme/Colors'
 import { ContentfulImage } from './ContentfulImage'
 
 export type SidebarItem = {
@@ -13,9 +13,11 @@ type Props = {
   open: boolean
   close: () => void
   sidebarItems?: Array<SidebarItem>
+  currentPage?: string
 }
 
 const defaultSidebarItems = [
+  { label: 'Home', link: '/' },
   { label: 'Posts', link: 'posts' },
   { label: 'About me', link: 'about' },
 ]
@@ -33,20 +35,22 @@ export const AppSidebar = (props: Props) => {
             <ContentfulImage src="/close.svg" width={24} height={24} alt="Close" />
           </SidebarCloseIcon>
         </SidebarHeader>
-        {defaultSidebarItems.map((item) => (
-          <div key={item.label}>
-            <SidebarItem
-              onClick={() => {
-                if (item.link) {
-                  router.push(`/${item.link}` || '/')
-                }
-              }}
-            >
-              <p>{item.label}</p>
-              <img src="/chevron.svg" alt="arrow" />
-            </SidebarItem>
-          </div>
-        ))}
+        {defaultSidebarItems.map(
+          (item) =>
+            props.currentPage !== item.label.toLowerCase().replaceAll(' ', '') && (
+              <SidebarItem
+                key={item.label}
+                onClick={() => {
+                  if (item.link) {
+                    router.push(`/${item.link}` || '/')
+                  }
+                }}
+              >
+                <p style={{ color: FontColors.Tertiary }}>{item.label}</p>
+                <img src="/chevron.svg" alt="arrow" />
+              </SidebarItem>
+            ),
+        )}
       </SidebarWrapper>
     </>
   )
@@ -95,6 +99,8 @@ const SidebarItem = styled.div`
   justify-content: space-between;
   padding: 0 24px;
   transition: background 0.2s;
+  font-family: 'Great Vibes', cursive;
+  font-size: 28px;
 
   img {
     width: 8px;
