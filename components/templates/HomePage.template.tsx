@@ -5,10 +5,11 @@ import { Colors, FontColors } from '../../theme/Colors'
 import { Home } from '../../types/Home'
 import { Page } from '../../types/Page'
 import { Post } from '../../types/Post'
-import { Container } from '../container'
 import { ContentfulImage } from '../ContentfulImage'
 import { CoverImage } from '../CoverImage'
 import { PostBody } from '../PostBody'
+import { Title } from '../Title'
+import { Container } from '../container'
 
 export type Props = {
   homeContent: Home
@@ -28,14 +29,14 @@ export const HomePageTemplate = (props: Props) => {
         <CoverImageWrapper>
           <CoverImage title={props.homeContent.title} url={props.homeContent.coverImage.url} />
         </CoverImageWrapper>
-        <Title>{props.homeContent.title}</Title>
+        <Title style={{ marginTop: 50 }}>{props.homeContent.title}</Title>
         <PostBodyWrapper>
           <PostBody {...props.homeContent.content} />
         </PostBodyWrapper>
         <PageListWrapper>
           {props.pageList.map((page, index) => (
             <PageWrapper tabIndex={index} key={index}>
-              <Title>{page.title}</Title>
+              <Title style={{ marginTop: 50 }}>{page.title}</Title>
               <PageImageWrapper>
                 <ContentfulImage
                   src={page.coverImage.url}
@@ -57,18 +58,6 @@ export const HomePageTemplate = (props: Props) => {
     </section>
   )
 }
-
-const Title = styled.div`
-  padding: 20px 0px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  place-content: center;
-  font-size: 52px;
-  color: ${FontColors.Tertiary};
-  font-weight: 400;
-  font-family: 'Great Vibes', cursive;
-`
 
 const CoverImageWrapper = styled.div`
   display: flex;

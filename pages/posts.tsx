@@ -1,7 +1,9 @@
 import { AppHeader } from '../components/AppHeader'
 import { Container } from '../components/container'
+import { HeroImage } from '../components/HeroImage'
 import { HeroPost } from '../components/HeroPost'
 import { MoreStories } from '../components/MoreStories'
+import { Title } from '../components/Title'
 import { getAllPostsForHome } from '../lib/api'
 import { Post } from '../types/Post'
 
@@ -19,16 +21,20 @@ const Posts = ({ preview, allPosts, showheader = true }: Props) => {
   return (
     <Container>
       {showheader ? <AppHeader showMenu={true} showLogo={true} currentPage={'posts'} /> : null}
-      {heroPost && (
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-      )}
+      {heroPost ? (
+        <>
+          <Title>Last Story</Title>
+          <HeroImage
+            imageSrc={heroPost.coverImage.url}
+            title={heroPost.title}
+            subtitle={heroPost.excerpt}
+            button={{
+              label: 'Check it out!',
+              src: heroPost.slug,
+            }}
+          />
+        </>
+      ) : null}
       {morePosts.length > 0 && <MoreStories posts={morePosts} />}
     </Container>
   )
