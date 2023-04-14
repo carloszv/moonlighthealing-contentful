@@ -1,11 +1,11 @@
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 import { PROJECT_NAME } from '../lib/constants'
 import { HeaderProps } from '../types/Header'
-import { AppSidebar } from './AppSideBar'
 
+import { AppSidebar } from './AppSideBar'
 import { ContentfulImage } from './ContentfulImage'
 
 export const AppHeader = (props: HeaderProps) => {
