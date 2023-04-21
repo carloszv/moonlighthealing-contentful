@@ -18,7 +18,6 @@ type Props = {
 
 const defaultSidebarItems = [
   { label: 'Home', link: '/' },
-  { label: 'Posts', link: 'posts' },
   { label: 'Blog / Library', link: 'posts' },
   { label: 'Workshops (Series)', link: 'posts' },
   { label: 'Events', link: 'posts' },
