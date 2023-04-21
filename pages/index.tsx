@@ -36,8 +36,8 @@ const Index = ({ preview, content, allPosts }: Props) => {
         </Head>
 
         <Container>
-          <AppHeader showMenu={false} showLogo={true} currentPage={'home'} />
-          <HomePageTemplate homeContent={pageContent} pageList={pageList} allPosts={allPosts} />
+          <AppHeader showMenu={true} showLogo={true} currentPage={'home'} />
+          <HomePageTemplate homeContent={pageContent} pageList={pageList} />
         </Container>
       </Layout>
     </>
@@ -48,7 +48,6 @@ export default Index
 
 export async function getStaticProps({ preview = false }) {
   const content = (await getHomePage()) ?? null
-  const allPosts = (await getAllPostsForHome(preview)) ?? []
 
-  return { props: { preview, content, allPosts } }
+  return { props: { preview, content } }
 }

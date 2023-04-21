@@ -1,9 +1,7 @@
-import Posts from 'posts'
 import styled from 'styled-components'
 import { Colors, FontColors } from '../../theme/Colors'
 import { Home } from '../../types/Home'
 import { Page } from '../../types/Page'
-import { Post } from '../../types/Post'
 import { ContentfulImage } from '../ContentfulImage'
 import { CoverImage } from '../CoverImage'
 import { PostBody } from '../PostBody'
@@ -13,7 +11,6 @@ import { Container } from '../container'
 export type Props = {
   homeContent: Home
   pageList: Array<Page>
-  allPosts: Array<Post>
 }
 
 export const HomePageTemplate = (props: Props) => {
@@ -47,8 +44,6 @@ export const HomePageTemplate = (props: Props) => {
           ))}
         </PageListWrapper>
       </Container>
-
-      <Posts preview={false} allPosts={props.allPosts} showheader={false} />
     </section>
   )
 }
