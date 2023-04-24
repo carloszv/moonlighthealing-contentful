@@ -45,9 +45,10 @@ export const AppSidebar = (props: Props) => {
               <SidebarItem
                 key={item.label}
                 onClick={() => {
-                  if (item.link) {
-                    router.push(`/${item.link}` || '/')
+                  if (item.link && item.link !== '/') {
+                    router.push(`/${item.link}`)
                   }
+                  router.push('/')
                 }}
               >
                 <p style={{ color: FontColors.Tertiary }}>{item.label}</p>

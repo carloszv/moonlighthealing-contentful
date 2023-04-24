@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import { HeroImage } from '../../components/HeroImage'
 import { MoreStories } from '../../components/MoreStories'
 import { Title } from '../../components/Title'
+import { Post } from '../../types/Post'
 import { Container } from '../container'
 
 type Props = {
-  allPosts: any
+  allPosts: Array<Post>
 }
 
 export const PostsPageTemplate = ({ allPosts }: Props) => {

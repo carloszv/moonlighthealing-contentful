@@ -231,8 +231,6 @@ export async function getHomePage() {
     true,
   )
 
-  console.log('home data', { ...entryHome.data })
-
   return {
     home: { ...entryHome.data?.home },
     pages: entryHome.data?.pageCollection.items,

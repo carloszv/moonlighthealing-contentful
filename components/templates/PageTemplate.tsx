@@ -7,7 +7,7 @@ import { Layout } from '../Layout'
 import { Container } from '../container'
 
 type Props = {
-  preview: any
+  preview: boolean
   title: string
   header: {
     showMenu: boolean

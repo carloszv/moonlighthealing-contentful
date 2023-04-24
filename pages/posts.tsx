@@ -2,10 +2,11 @@ import { PageTemplate } from '../components/templates/PageTemplate'
 import { PostsPageTemplate } from '../components/templates/PostsPage.template'
 
 import { getAllPostsForHome } from '../lib/api'
+import { Post } from '../types/Post'
 
 type Props = {
-  preview: any
-  allPosts: any
+  preview: boolean
+  allPosts: Array<Post>
   showheader: boolean
 }
 

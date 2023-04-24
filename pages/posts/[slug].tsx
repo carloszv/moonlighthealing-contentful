@@ -9,24 +9,25 @@ import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import { PROJECT_NAME } from '../../lib/constants'
 import { PageTemplate } from '../../components/templates/PageTemplate'
 import { PostPageTemplate } from '../../components/templates/PostPage.template'
+import { Post } from '../../types/Post'
 
 type Props = {
-  post: any
-  morePosts: any
+  post: Post
+  morePosts: Array<Post>
   preview: boolean
 }
 
 const Post = ({ post, morePosts, preview }: Props) => {
   const router = useRouter()
 
-  if (!router.isFallback && !post) {
+  if ((!router.isFallback && !post) || !post) {
     return <ErrorPage statusCode={404} />
   }
 
   return (
     <PageTemplate
       preview={preview}
-      title={post.title ? `${post.title} | ${PROJECT_NAME}` : PROJECT_NAME}
+      title={post.title !== undefined ? `${post.title} | ${PROJECT_NAME}` : PROJECT_NAME}
       header={{
         showMenu: true,
         showLogo: true,
