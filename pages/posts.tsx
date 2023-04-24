@@ -1,10 +1,7 @@
-import { AppHeader } from '../components/AppHeader'
-import { Container } from '../components/container'
-import { HeroImage } from '../components/HeroImage'
-import { MoreStories } from '../components/MoreStories'
-import { Title } from '../components/Title'
+import { PageTemplate } from '../components/templates/PageTemplate'
+import { PostsPageTemplate } from '../components/templates/PostsPage.template'
+
 import { getAllPostsForHome } from '../lib/api'
-import { Post } from '../types/Post'
 
 type Props = {
   preview: any
@@ -13,26 +10,18 @@ type Props = {
 }
 
 const Posts = ({ preview, allPosts, showheader = true }: Props) => {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
-
-  const sidebarItems = allPosts.map((post: Post) => ({ label: post.title, link: post.slug }))
   return (
-    <Container>
-      {showheader ? <AppHeader showMenu={true} showLogo={true} currentPage={'posts'} /> : null}
-      {heroPost ? (
-        <>
-          <Title>Last Story</Title>
-          <HeroImage
-            imageSrc={heroPost.coverImage.url}
-            title={heroPost.title}
-            subtitle={heroPost.excerpt}
-            slug={heroPost.slug}
-          />
-        </>
-      ) : null}
-      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-    </Container>
+    <PageTemplate
+      preview={preview}
+      title={'POSTS'}
+      header={{
+        showMenu: true,
+        showLogo: true,
+        currentPage: 'posts',
+      }}
+    >
+      <PostsPageTemplate allPosts={allPosts} />
+    </PageTemplate>
   )
 }
 

@@ -1,15 +1,9 @@
-import Head from 'next/head'
-
-import { AppHeader } from '../components/AppHeader'
-import { Container } from '../components/container'
-import { Layout } from '../components/Layout'
 import { HomePageTemplate } from '../components/templates/HomePage.template'
-import { getAllPostsForHome, getHomePage } from '../lib/api'
+import { PageTemplate } from '../components/templates/PageTemplate'
+import { getHomePage } from '../lib/api'
 import { PROJECT_NAME } from '../lib/constants'
 import { Home } from '../types/Home'
 import { Page } from '../types/Page'
-import { GlobalStyle } from '../styles/globalStyles'
-import { Content } from '../types/Content'
 import { Post } from '../types/Post'
 
 type Props = {
@@ -28,19 +22,17 @@ const Index = ({ preview, content, allPosts }: Props) => {
   )
 
   return (
-    <>
-      <GlobalStyle />
-      <Layout preview={preview}>
-        <Head>
-          <title>{PROJECT_NAME}</title>
-        </Head>
-
-        <Container>
-          <AppHeader showMenu={true} showLogo={true} currentPage={'home'} />
-          <HomePageTemplate homeContent={pageContent} pageList={pageList} />
-        </Container>
-      </Layout>
-    </>
+    <PageTemplate
+      preview={preview}
+      title={PROJECT_NAME}
+      header={{
+        showMenu: true,
+        showLogo: true,
+        currentPage: 'home',
+      }}
+    >
+      <HomePageTemplate homeContent={pageContent} pageList={pageList} />
+    </PageTemplate>
   )
 }
 

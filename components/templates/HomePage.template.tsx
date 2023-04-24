@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { Colors, FontColors } from '../../theme/Colors'
 import { Home } from '../../types/Home'
 import { Page } from '../../types/Page'
@@ -50,6 +51,7 @@ export const HomePageTemplate = (props: Props) => {
 
 const CoverImageWrapper = styled.div`
   display: flex;
+  margin-top: 288px;
 `
 const PostBodyWrapper = styled.div`
   display: flex;

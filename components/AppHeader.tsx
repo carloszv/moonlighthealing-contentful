@@ -18,20 +18,36 @@ export const AppHeader = (props: HeaderProps) => {
   const [small, setSmall] = useState(false)
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => setSmall(window.pageYOffset > 300))
+    const handler = () => {
+      setSmall((isSmall) => {
+        if (!isSmall && (document.body.scrollTop > size || document.documentElement.scrollTop > size)) {
+          return true
+        }
+
+        if (isSmall && document.body.scrollTop < size && document.documentElement.scrollTop < size) {
+          return false
+        }
+
+        return isSmall
+      })
     }
+
+    window.addEventListener('scroll', handler)
+    return () => window.removeEventListener('scroll', handler)
   }, [])
 
   return (
-    <HeaderWrapper small>
+    <HeaderWrapper className={small ? 'smallHeader' : 'normalHeader'} small={small}>
       <AppSidebar
         open={showSidebar}
         close={() => setShowSidebar(false)}
         currentPage={props.currentPage}
       />
       {showLogo && (
-        <ImageWrapper onClick={() => router.push('/')}>
+        <ImageWrapper
+          onClick={() => router.push('/')}
+          className={small ? 'smallHeader' : 'normalHeader'}
+        >
           <ContentfulImage src="/logo.svg" alt={PROJECT_NAME} width={size} height={size} />
         </ImageWrapper>
       )}
@@ -47,12 +63,23 @@ export const AppHeader = (props: HeaderProps) => {
 const HeaderWrapper = styled.div<{ small: boolean }>`
   display: flex;
   min-height: 80px;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
-  padding: 0 20px;
+  padding: 0px 20px;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
-  background-color: ${({ small }) => small && 'white'};
+  &.smallHeader {
+    height: 80px;
+  }
+
+  &.normalHeader {
+    height: 288px;
+  }
 `
 
 const Menu = styled.div`
@@ -64,4 +91,16 @@ const Menu = styled.div`
 
 const ImageWrapper = styled.div`
   cursor: pointer;
+  display: flex;
+  transition: all 0.5s ease-in-out;
+
+  &.smallHeader {
+    width: 80px;
+    height: 80px;
+  }
+
+  &.normalHeader {
+    width: 288px;
+    height: 288px;
+  }
 `
