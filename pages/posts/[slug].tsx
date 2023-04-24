@@ -26,7 +26,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
   return (
     <PageTemplate
       preview={preview}
-      title={`${post.title} | ${PROJECT_NAME}`}
+      title={post.title ? `${post.title} | ${PROJECT_NAME}` : PROJECT_NAME}
       header={{
         showMenu: true,
         showLogo: true,
