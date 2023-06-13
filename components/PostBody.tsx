@@ -30,11 +30,16 @@ const TextWrapper = styled.div`
 `
 
 const Text = styled.div`
+  h1,
   h2,
   h3 {
     text-align: center;
     font-weight: 400;
     font-family: 'Great Vibes', cursive;
+  }
+
+  h1 {
+    font-size: 48px;
   }
 
   ul {

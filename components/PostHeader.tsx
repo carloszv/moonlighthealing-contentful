@@ -21,18 +21,16 @@ export const PostHeader = ({ title, coverImage, date, author }: Props) => {
       <StyledTitle>
         <Title>{title}</Title>
       </StyledTitle>
-      <TextWrapper
-        className="hidden md:block md:mb-12"
-        style={{ display: 'flex', alignItems: 'center', color: FontColors.Tertiary }}
-      >
+
+      <div className="mb-8 md:mb-8 sm:mx-0">
+        <CoverImage title={title} url={coverImage.url} />
+      </div>
+      <TextWrapper className="hidden md:block md:mb-12">
         {author && <Avatar name={author.name} picture={author.picture} />}
         <div className="text-lg ml-10">
           <DateComponent dateString={date} />
         </div>
       </TextWrapper>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} url={coverImage.url} />
-      </div>
     </>
   )
 }
@@ -57,4 +55,11 @@ const TextWrapper = styled.div`
     margin-left: auto;
     margin-bottom: 20px;
   }
+
+  display: flex;
+  align-items: center;
+  color: ${FontColors.Tertiary};
+  justify-content: right;
+  margin-bottom: 20px;
+  padding: 0 24px;
 `

@@ -17,7 +17,7 @@ export const PostsPageTemplate = ({ allPosts }: Props) => {
     <Container>
       {heroPost ? (
         <HeroWrapper>
-          <Title>Last Story</Title>
+          <Title>Workshops</Title>
           <HeroImage
             imageSrc={heroPost.coverImage.url}
             title={heroPost.title}

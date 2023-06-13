@@ -14,7 +14,7 @@ const Posts = ({ preview, allPosts, showheader = true }: Props) => {
   return (
     <PageTemplate
       preview={preview}
-      title={'POSTS'}
+      title={'Posts'}
       header={{
         showMenu: true,
         showLogo: true,
