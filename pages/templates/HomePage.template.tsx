@@ -76,7 +76,7 @@ const PageWrapper = styled.div<{ tabIndex: number }>`
 `
 
 const PageImageWrapper = styled.div`
-  width: 300px;
+  width: 400px;
   height: 300px;
   padding: 20px;
   display: flex;
