@@ -83,6 +83,29 @@ bio(id: "57ilqEjJriTQFMyhY2h2xT") {
 }
 `
 
+const pageQuery = (id: string) => `
+page(id: "${id}") {
+  title
+  content {
+    json
+    links {
+      assets {
+        block {
+          sys {
+            id
+          }
+          url
+          description
+        }
+      }
+    }
+  }
+  coverImage {
+    url
+  }
+}
+`
+
 const PAGE_COLLECTION = `
 pageCollection {
   items {
@@ -234,5 +257,18 @@ export async function getHomePage() {
   return {
     home: { ...entryHome.data?.home },
     pages: entryHome.data?.pageCollection.items,
+  }
+}
+
+export async function getPageById(id: string) {
+  const response = await fetchGraphQL(
+    `query {
+      ${pageQuery(id)}
+    }`,
+    true,
+  )
+
+  return {
+    data: { ...response.data?.page },
   }
 }

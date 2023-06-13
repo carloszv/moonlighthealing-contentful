@@ -17,9 +17,9 @@ const customMarkdownOptions = (content: PostProps['content']) => ({
 export const PostBody = (content: PostProps['content']) => {
   return (
     <TextWrapper className="max-w-2l mx-auto">
-      <div className={markdownStyles['markdown']} style={{ color: FontColors.Tertiary }}>
+      <Text className={markdownStyles['markdown']} style={{ color: FontColors.Tertiary }}>
         {documentToReactComponents(content.json, customMarkdownOptions(content))}
-      </div>
+      </Text>
     </TextWrapper>
   )
 }
@@ -27,4 +27,28 @@ export const PostBody = (content: PostProps['content']) => {
 const TextWrapper = styled.div`
   text-align: justify;
   width: 80%;
+`
+
+const Text = styled.div`
+  h2,
+  h3 {
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Great Vibes', cursive;
+  }
+
+  ul {
+    list-style: initial;
+    margin-left: 24px;
+  }
+
+  ol {
+    list-style: auto;
+    margin-left: 24px;
+  }
+
+  p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 `

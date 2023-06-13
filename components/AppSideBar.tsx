@@ -16,13 +16,13 @@ type Props = {
   currentPage?: string
 }
 
-const defaultSidebarItems = [
+const defaultSidebarNavigationItems = [
   { label: 'Home', link: '/' },
   { label: 'Blog / Library', link: 'posts' },
   { label: 'Workshops (Series)', link: 'posts' },
   { label: 'Events', link: 'posts' },
-  { label: 'Shop', link: 'posts' },
-  { label: 'Reiki', link: 'posts' },
+  { label: 'Shop', link: 'shop' },
+  { label: 'Reiki', link: 'reiki' },
   { label: 'Intuitive readings', link: 'posts' },
 ]
 
@@ -39,7 +39,7 @@ export const AppSidebar = (props: Props) => {
             <ContentfulImage src="/close.svg" width={24} height={24} alt="Close" />
           </SidebarCloseIcon>
         </SidebarHeader>
-        {defaultSidebarItems.map(
+        {defaultSidebarNavigationItems.map(
           (item) =>
             props.currentPage !== item.label.toLowerCase().replaceAll(' ', '') && (
               <SidebarItem
