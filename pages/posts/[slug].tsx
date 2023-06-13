@@ -7,8 +7,8 @@ import { PostTitle } from '../../components/PostTitle'
 
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import { PROJECT_NAME } from '../../lib/constants'
-import { PageTemplate } from '../../components/templates/PageTemplate'
-import { PostPageTemplate } from '../../components/templates/PostPage.template'
+import { PageTemplate } from '../templates/PageTemplate'
+import { PostPageTemplate } from '../templates/PostPage.template'
 import { Post } from '../../types/Post'
 
 type Props = {

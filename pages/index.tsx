@@ -1,5 +1,5 @@
-import { HomePageTemplate } from '../components/templates/HomePage.template'
-import { PageTemplate } from '../components/templates/PageTemplate'
+import { HomePageTemplate } from './templates/HomePage.template'
+import { PageTemplate } from './templates/PageTemplate'
 import { getHomePage } from '../lib/api'
 import { PROJECT_NAME } from '../lib/constants'
 import { Home } from '../types/Home'

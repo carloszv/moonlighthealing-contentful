@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { Colors, FontColors } from '../../theme/Colors'
 import { Home } from '../../types/Home'
 import { Page } from '../../types/Page'
-import { ContentfulImage } from '../ContentfulImage'
-import { CoverImage } from '../CoverImage'
-import { PostBody } from '../PostBody'
-import { Title } from '../Title'
-import { Container } from '../container'
+import { ContentfulImage } from '../../components/ContentfulImage'
+import { CoverImage } from '../../components/CoverImage'
+import { PostBody } from '../../components/PostBody'
+import { Title } from '../../components/Title'
+import { Container } from '../../components/container'
 
 export type Props = {
   homeContent: Home

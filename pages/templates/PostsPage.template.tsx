@@ -4,7 +4,7 @@ import { HeroImage } from '../../components/HeroImage'
 import { MoreStories } from '../../components/MoreStories'
 import { Title } from '../../components/Title'
 import { Post } from '../../types/Post'
-import { Container } from '../container'
+import { Container } from '../../components/container'
 
 type Props = {
   allPosts: Array<Post>
