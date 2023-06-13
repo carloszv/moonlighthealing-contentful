@@ -18,12 +18,12 @@ type Props = {
 
 const defaultSidebarNavigationItems = [
   { label: 'Home', link: '/' },
-  { label: 'Blog / Library', link: 'posts' },
-  { label: 'Workshops (Series)', link: 'posts' },
-  { label: 'Events', link: 'posts' },
-  { label: 'Shop', link: 'shop' },
-  { label: 'Reiki', link: 'reiki' },
-  { label: 'Intuitive readings', link: 'posts' },
+  { label: 'Blog / Library', link: '/posts' },
+  { label: 'Workshops (Series)', link: '/posts' },
+  { label: 'Events', link: '/posts' },
+  { label: 'Shop', link: '/shop' },
+  { label: 'Reiki', link: '/reiki' },
+  { label: 'Intuitive readings', link: '/posts' },
 ]
 
 export const AppSidebar = (props: Props) => {
@@ -42,15 +42,7 @@ export const AppSidebar = (props: Props) => {
         {defaultSidebarNavigationItems.map(
           (item) =>
             props.currentPage !== item.label.toLowerCase().replaceAll(' ', '') && (
-              <SidebarItem
-                key={item.label}
-                onClick={() => {
-                  if (item.link && item.link !== '/') {
-                    router.push(`/${item.link}`)
-                  }
-                  router.push('/')
-                }}
-              >
+              <SidebarItem key={item.label} onClick={() => router.push(`${item.link}`)}>
                 <p style={{ color: FontColors.Tertiary }}>{item.label}</p>
                 <img src="/chevron.svg" alt="arrow" />
               </SidebarItem>
