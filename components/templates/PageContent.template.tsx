@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-import { CoverImage } from '../../components/CoverImage'
-import { PostBody } from '../../components/PostBody'
-import { Title } from '../../components/Title'
-import { Container } from '../../components/container'
+import { CoverImage } from '../CoverImage'
+import { PostBody } from '../PostBody'
+import { Title } from '../Title'
+import { Container } from '../container'
 import { PageContent as Props } from '../../types/PageContent'
 
 export const PageContentTemplate = (props: Props) => {

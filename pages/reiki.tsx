@@ -1,6 +1,6 @@
-import { PageTemplate } from './templates/PageTemplate'
+import { PageTemplate } from '../components/templates/PageTemplate'
 
-import { PageContentTemplate } from 'templates/PageContent.template'
+import { PageContentTemplate } from '../components/templates/PageContent.template'
 import { getPageById } from '../lib/api'
 import { PageContent } from '../types/PageContent'
 

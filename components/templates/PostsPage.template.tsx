@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-import { HeroImage } from '../../components/HeroImage'
-import { MoreStories } from '../../components/MoreStories'
-import { Title } from '../../components/Title'
+import { HeroImage } from '../HeroImage'
+import { MoreStories } from '../MoreStories'
+import { Title } from '../Title'
 import { Post } from '../../types/Post'
-import { Container } from '../../components/container'
+import { Container } from '../container'
 
 type Props = {
   allPosts: Array<Post>

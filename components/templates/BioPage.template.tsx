@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Content } from '../../types/Content'
-import { ContentfulImage } from '../../components/ContentfulImage'
-import { CoverImage } from '../../components/CoverImage'
-import { PostBody } from '../../components/PostBody'
+import { ContentfulImage } from '../ContentfulImage'
+import { CoverImage } from '../CoverImage'
+import { PostBody } from '../PostBody'
 import { FontColors } from '../../theme/Colors'
 
 export type Props = {

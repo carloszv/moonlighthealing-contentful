@@ -1,5 +1,5 @@
-import { PageTemplate } from './templates/PageTemplate'
-import { PostsPageTemplate } from './templates/PostsPage.template'
+import { PageTemplate } from '../components/templates/PageTemplate'
+import { PostsPageTemplate } from '../components/templates/PostsPage.template'
 
 import { getAllPostsForHome } from '../lib/api'
 import { Post } from '../types/Post'

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-import { MoreStories } from '../../components/MoreStories'
-import { PostBody } from '../../components/PostBody'
-import { PostHeader } from '../../components/PostHeader'
-import SectionSeparator from '../../components/section-separator'
+import { MoreStories } from '../MoreStories'
+import { PostBody } from '../PostBody'
+import { PostHeader } from '../PostHeader'
+import SectionSeparator from '../section-separator'
 
 type Props = {
   post: any

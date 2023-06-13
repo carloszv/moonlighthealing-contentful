@@ -2,9 +2,9 @@ import Head from 'next/head'
 import { ReactNode } from 'react'
 
 import { GlobalStyle } from '../../styles/globalStyles'
-import { AppHeader } from '../../components/AppHeader'
-import { Layout } from '../../components/Layout'
-import { Container } from '../../components/container'
+import { AppHeader } from '../AppHeader'
+import { Layout } from '../Layout'
+import { Container } from '../container'
 
 type Props = {
   preview: boolean
