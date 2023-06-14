@@ -5,6 +5,7 @@ import { CoverImage } from './CoverImage'
 export type Post = {
   slug: string
   title: string
+  showTitle?: boolean
   coverImage: CoverImage
   date: string
   author: Author

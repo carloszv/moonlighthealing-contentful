@@ -18,12 +18,12 @@ type Props = {
 
 const defaultSidebarNavigationItems = [
   { label: 'Home', link: '/' },
-  { label: 'Blog / Library', link: '/posts' },
+  // { label: 'Blog / Library', link: '' },
   { label: 'Workshops (Series)', link: '/posts' },
-  { label: 'Events', link: '/posts' },
+  // { label: 'Events', link: '' },
   { label: 'Shop', link: '/shop' },
   { label: 'Reiki', link: '/reiki' },
-  { label: 'Intuitive readings', link: '/posts' },
+  // { label: 'Intuitive readings', link: '' },
 ]
 
 export const AppSidebar = (props: Props) => {

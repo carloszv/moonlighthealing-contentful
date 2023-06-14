@@ -11,7 +11,6 @@ export const MoreStories = (props: Props) => {
   return (
     <section>
       <Wrapper>
-        {/* <Title>More Stories</Title> */}
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
           {props.posts.map((post, index) => (
             <HeroImage
@@ -30,4 +29,6 @@ export const MoreStories = (props: Props) => {
 
 const Wrapper = styled.div`
   margin-top: 96px;
+  margin-left: 24px;
+  margin-right: 24px;
 `

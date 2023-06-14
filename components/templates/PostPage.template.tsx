@@ -4,10 +4,11 @@ import { MoreStories } from '../MoreStories'
 import { PostBody } from '../PostBody'
 import { PostHeader } from '../PostHeader'
 import SectionSeparator from '../section-separator'
+import { Post } from '../../types/Post'
 
 type Props = {
-  post: any
-  morePosts: any
+  post: Post
+  morePosts: Array<Post>
 }
 
 export const PostPageTemplate = ({ post, morePosts }: Props) => {
@@ -15,7 +16,9 @@ export const PostPageTemplate = ({ post, morePosts }: Props) => {
     <PostWrapper>
       <article>
         <PostHeader
-          title={post.title}
+          title={
+            post.showTitle === null || (post.showTitle !== null && post.showTitle) ? post.title : ''
+          }
           coverImage={post.coverImage}
           date={post.date}
           author={post.author}

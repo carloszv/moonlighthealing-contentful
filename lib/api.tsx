@@ -4,6 +4,7 @@ sys {
 }
 slug
 title
+showTitle
 coverImage {
   url
 }
