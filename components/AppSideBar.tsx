@@ -19,7 +19,7 @@ type Props = {
 const defaultSidebarNavigationItems = [
   { label: 'Home', link: '/' },
   // { label: 'Blog / Library', link: '' },
-  { label: 'Workshops (Series)', link: '/posts' },
+  { label: 'Workshops (Series)', link: '/workshops' },
   // { label: 'Events', link: '' },
   { label: 'Shop', link: '/shop' },
   { label: 'Reiki', link: '/reiki' },

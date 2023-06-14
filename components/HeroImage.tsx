@@ -16,7 +16,7 @@ export const HeroImage = (props: Props) => {
   const router = useRouter()
 
   const gotoPage = () => {
-    router.push(`/posts/${props.slug}`)
+    router.push(`/workshops/${props.slug}`)
   }
   return (
     <section>

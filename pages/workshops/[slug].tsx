@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps = async ({ params, preview = false }
 export const getStaticPaths: GetStaticPaths = async () => {
   const allPosts = await getAllPostsWithSlug()
   return {
-    paths: allPosts?.map(({ slug }: any) => `/posts/${slug}`) ?? [],
+    paths: allPosts?.map(({ slug }: any) => `/workshops/${slug}`) ?? [],
     fallback: true,
   }
 }

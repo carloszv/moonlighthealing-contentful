@@ -6,9 +6,7 @@ export default async function handler(req, res) {
 
   // Check for secret to confirm this is a valid request
   if (!inboundRevalToken) {
-    return res
-      .status(401)
-      .json({ message: 'x-vercel-reval-key header not defined' })
+    return res.status(401).json({ message: 'x-vercel-reval-key header not defined' })
   } else if (inboundRevalToken !== process.env.CONTENTFUL_REVALIDATE_SECRET) {
     return res.status(401).json({ message: 'Invalid token' })
   }
@@ -17,7 +15,7 @@ export default async function handler(req, res) {
     let postSlug = req.body.fields.slug['en-US']
 
     // revalidate the individual post and the home page
-    await res.revalidate(`/posts/${postSlug}`)
+    await res.revalidate(`/workshops/${postSlug}`)
     await res.revalidate('/')
 
     return res.json({ revalidated: true })

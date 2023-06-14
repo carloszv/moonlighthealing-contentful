@@ -19,7 +19,7 @@ export const CoverImage = ({ title, url, slug }: CoverImageProps) => {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link href={`/posts/${slug}`}>
+        <Link href={`/workshops/${slug}`}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (
