@@ -20,4 +20,5 @@ const TitleWrapper = styled.div`
   color: ${FontColors.Tertiary};
   font-weight: 400;
   font-family: 'Monserrat', cursive;
+  cursor: default;
 `

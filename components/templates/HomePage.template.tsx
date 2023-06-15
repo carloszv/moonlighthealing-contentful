@@ -54,6 +54,7 @@ const CoverImageWrapper = styled.div`
 `
 const PostBodyWrapper = styled.div`
   display: flex;
+  cursor: default;
   margin-right: auto;
   margin-left: auto;
 `
@@ -68,7 +69,7 @@ const PageWrapper = styled.div<{ tabIndex: number }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
   justify-content: space-between;
   flex-direction: ${({ tabIndex }) => (tabIndex % 2 === 0 ? '' : 'row-reverse')};
   width: 100%;
