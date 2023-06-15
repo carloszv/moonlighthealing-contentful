@@ -19,5 +19,5 @@ const TitleWrapper = styled.div`
   font-size: 48px;
   color: ${FontColors.Tertiary};
   font-weight: 400;
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Monserrat', cursive;
 `

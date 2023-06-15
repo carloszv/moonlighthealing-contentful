@@ -19,7 +19,7 @@ type Props = {
 const defaultSidebarNavigationItems = [
   { label: 'Home', link: '/' },
   // { label: 'Blog / Library', link: '' },
-  { label: 'Workshops (Series)', link: '/workshops' },
+  { label: 'Workshops', link: '/workshops' },
   // { label: 'Events', link: '' },
   { label: 'Shop', link: '/shop' },
   { label: 'Reiki', link: '/reiki' },
@@ -96,7 +96,7 @@ const SidebarItem = styled.div`
   justify-content: space-between;
   padding: 0 24px;
   transition: background 0.2s;
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Monserrat', cursive;
   font-size: 28px;
 
   img {

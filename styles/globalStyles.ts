@@ -9,10 +9,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat, Gill Sans';
     
     font-size: 18px;
-    font-color: ${FontColors.Tertiary}
+    font-color: ${FontColors.Dark};
 
     .title {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Monserrat', cursive;
     }
   }
 `
