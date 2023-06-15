@@ -33,11 +33,9 @@ export const HomePageTemplate = (props: Props) => {
                 <ContentfulImage
                   src={page.coverImage.url}
                   title={page.coverImage.title}
-                  style={{ width: '100%', height: '100%', position: 'absolute' }}
                   layout={'fill'}
                 ></ContentfulImage>
               </PageImageWrapper>
-
               <PostBodyWrapper>
                 <PostBody {...page.content} />
               </PostBodyWrapper>
