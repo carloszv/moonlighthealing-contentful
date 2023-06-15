@@ -41,7 +41,6 @@ const Title = styled.h1`
   color: ${FontColors.Dark};
   font-weight: bold;
   font-size: 72px;
-  font-family: Gill Sans;
 `
 
 const SectionWrapper = styled.div`
