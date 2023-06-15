@@ -33,4 +33,5 @@ export const PostsPageTemplate = ({ allPosts }: Props) => {
 
 const HeroWrapper = styled.div`
   margin-top: 288px;
+  text-align: center;
 `

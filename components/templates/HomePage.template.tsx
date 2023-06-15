@@ -52,6 +52,7 @@ export const HomePageTemplate = (props: Props) => {
 const CoverImageWrapper = styled.div`
   display: flex;
   margin-top: 288px;
+  place-content: center;
 `
 const PostBodyWrapper = styled.div`
   display: flex;
