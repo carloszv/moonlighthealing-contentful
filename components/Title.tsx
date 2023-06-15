@@ -17,8 +17,8 @@ const TitleWrapper = styled.div`
   text-align: center;
   place-content: center;
   font-size: 48px;
-  color: ${FontColors.Tertiary};
+  color: ${FontColors.Dark};
   font-weight: 400;
-  font-family: 'Monserrat', cursive;
+  font-family: 'Montserrat';
   cursor: default;
 `

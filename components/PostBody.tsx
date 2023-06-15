@@ -45,7 +45,7 @@ const Text = styled.div`
   h3 {
     text-align: center;
     font-weight: 400;
-    font-family: 'Monserrat', cursive;
+    font-family: 'Montserrat';
   }
 
   h1 {

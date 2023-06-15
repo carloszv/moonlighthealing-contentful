@@ -96,7 +96,7 @@ const SidebarItem = styled.div`
   justify-content: space-between;
   padding: 0 24px;
   transition: background 0.2s;
-  font-family: 'Monserrat', cursive;
+  font-family: 'Montserrat';
   font-size: 28px;
 
   img {
