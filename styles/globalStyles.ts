@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 18px;
     font-color: ${FontColors.Dark};
 
+    background-color: ${FontColors.Light};
+
     .title {
       font-family: 'Montserrat';
     }

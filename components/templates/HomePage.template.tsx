@@ -85,31 +85,3 @@ const PageImageWrapper = styled.div`
   overflow: auto;
   position: relative;
 `
-
-const PageTitle = styled.div`
-  width: 60%;
-  text-align: center;
-  font-size: 32px;
-  color: ${FontColors.Tertiary};
-  font-weight: 400;
-  cursor: default;
-`
-
-const PageContent = styled.div`
-  text-align-last: center;
-  cursor: default;
-`
-
-const PageDescription = styled.div`
-  font-size: 18px;
-  color: ${FontColors.Secondary};
-`
-
-const PageButton = styled.button`
-  background-color: ${Colors.Primary};
-  border-radius: 10px;
-  color: white;
-  font-size: 12px;
-  padding: 4px;
-  width: 100px;
-`

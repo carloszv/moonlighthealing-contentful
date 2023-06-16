@@ -18,12 +18,12 @@ type Props = {
 
 const defaultSidebarNavigationItems = [
   { label: 'Home', link: '/' },
-  // { label: 'Blog / Library', link: '' },
-  { label: 'Workshops', link: '/workshops' },
-  // { label: 'Events', link: '' },
-  { label: 'Shop', link: '/shop' },
+  { label: 'Courses', link: '/coming-soon' },
   { label: 'Reiki', link: '/reiki' },
-  // { label: 'Intuitive readings', link: '' },
+  { label: 'Events', link: '/coming-soon' },
+  { label: 'Shop', link: '/shop' },
+  { label: 'Workshops', link: '/workshops' },
+  { label: 'Blessing Way', link: '/coming-soon' },
 ]
 
 export const AppSidebar = (props: Props) => {
@@ -43,7 +43,7 @@ export const AppSidebar = (props: Props) => {
           (item) =>
             props.currentPage !== item.label.toLowerCase().replaceAll(' ', '') && (
               <SidebarItem key={item.label} onClick={() => router.push(`${item.link}`)}>
-                <p style={{ color: FontColors.Tertiary }}>{item.label}</p>
+                <p style={{ color: FontColors.Tertiary, fontWeight: 'bold' }}>{item.label}</p>
                 <img src="/chevron.svg" alt="arrow" />
               </SidebarItem>
             ),
@@ -75,7 +75,7 @@ const OpacityScreen = styled.div`
 `
 
 const SidebarWrapper = styled.div<{ open: boolean }>`
-  background: white;
+  background: ${FontColors.Light};
   bottom: 0;
   box-shadow: 0px 4px 32px 4px rgba(0, 0, 0, 0.25);
   position: fixed;

@@ -7,6 +7,7 @@ import { HeaderProps } from '../types/Header'
 
 import { AppSidebar } from './AppSideBar'
 import { ContentfulImage } from './ContentfulImage'
+import { FontColors } from '../theme/Colors'
 
 export const AppHeader = (props: HeaderProps) => {
   const router = useRouter()
@@ -67,7 +68,7 @@ const HeaderWrapper = styled.div<{ small: boolean }>`
   top: 0;
   z-index: 100;
   padding: 0px 20px;
-  background-color: white;
+  background-color: ${FontColors.Light};
   transition: all 0.5s ease-in-out;
   width: 100%;
   margin-left: auto;
