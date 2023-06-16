@@ -3,6 +3,7 @@ import { FontColors } from '../theme/Colors'
 
 export const GlobalStyle = createGlobalStyle`
   body {
+    display: flex;
     margin: 0;
     padding: 0;
     font-family: 'Montserrat';
