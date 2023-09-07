@@ -7,7 +7,7 @@ type Props = {
 
 export const InstagramLogo = (props: Props) => {
   return (
-    <a href={props.src || 'https://www.instagram.com'}>
+    <a href={props.src || 'https://www.instagram.com'} target="_blank">
       <LogoWrapper>
         <BsInstagram size={20} color="white" />
       </LogoWrapper>

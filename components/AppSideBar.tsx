@@ -18,6 +18,7 @@ type Props = {
 
 const defaultSidebarNavigationItems = [
   { label: 'Home', link: '/' },
+  { label: 'About', link: '/about' },
   { label: 'Courses', link: '/coming-soon' },
   { label: 'Reiki', link: '/reiki' },
   { label: 'Events', link: '/coming-soon' },

@@ -90,6 +90,7 @@ const HoverOverlay = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
+  opacity: 1;
 
   &:hover ${HoverContainer}, &:focus ${HoverContainer} {
     opacity: 1;

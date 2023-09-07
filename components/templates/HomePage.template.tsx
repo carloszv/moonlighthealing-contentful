@@ -25,7 +25,7 @@ export const HomePageTemplate = (props: Props) => {
         <PostBodyWrapper>
           <PostBody {...props.homeContent.content} />
         </PostBodyWrapper>
-        <PageListWrapper>
+        {/* <PageListWrapper>
           {props.pageList.map((page, index) => (
             <PageWrapper tabIndex={index} key={index}>
               <Title style={{ marginTop: 50 }}>{page.title}</Title>
@@ -41,7 +41,7 @@ export const HomePageTemplate = (props: Props) => {
               </PostBodyWrapper>
             </PageWrapper>
           ))}
-        </PageListWrapper>
+        </PageListWrapper> */}
       </Container>
     </section>
   )

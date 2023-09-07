@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { PageTemplate } from '../components/templates/PageTemplate'
 import { PostsPageTemplate } from '../components/templates/PostsPage.template'
 
@@ -11,6 +12,12 @@ type Props = {
 }
 
 const Posts = ({ preview, allPosts, showheader = true }: Props) => {
+  const router = useRouter()
+
+  const onPostClicked = (url: string) => {
+    router.push(`/workshops/${url}`)
+  }
+
   return (
     <PageTemplate
       preview={preview}
@@ -21,7 +28,7 @@ const Posts = ({ preview, allPosts, showheader = true }: Props) => {
         currentPage: 'workshops',
       }}
     >
-      <PostsPageTemplate allPosts={allPosts} />
+      <PostsPageTemplate allPosts={allPosts} onPostClicked={onPostClicked} />
     </PageTemplate>
   )
 }

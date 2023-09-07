@@ -1,5 +1,6 @@
 import styled, { CSSProperties } from 'styled-components'
 import { FontColors } from '../theme/Colors'
+import { MobileStyle } from '../theme/MediaQuery'
 
 type Props = {
   children: React.ReactNode
@@ -21,4 +22,8 @@ const TitleWrapper = styled.div`
   font-weight: 400;
   font-family: 'Montserrat';
   cursor: default;
+
+  @media ${MobileStyle} {
+    font-size: 44px;
+  }
 `

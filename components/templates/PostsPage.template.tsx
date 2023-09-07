@@ -1,37 +1,30 @@
 import styled from 'styled-components'
 
-import { HeroImage } from '../HeroImage'
-import { MoreStories } from '../MoreStories'
-import { Title } from '../Title'
 import { Post } from '../../types/Post'
+import { PostButton } from '../PostButton'
 import { Container } from '../container'
 
 type Props = {
   allPosts: Array<Post>
+  onPostClicked: (url: string) => void
 }
 
-export const PostsPageTemplate = ({ allPosts }: Props) => {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+export const PostsPageTemplate = ({ allPosts, onPostClicked }: Props) => {
   return (
     <Container>
-      {heroPost ? (
-        <HeroWrapper>
-          <Title>Workshops</Title>
-          <HeroImage
-            imageSrc={heroPost.coverImage.url}
-            title={heroPost.title}
-            subtitle={heroPost.excerpt}
-            slug={heroPost.slug}
+      <PostWrapper>
+        {allPosts.map((post, index) => (
+          <PostButton
+            key={`post_${post.title}_${index}`}
+            title={post.title}
+            onClick={() => onPostClicked(post.slug)}
           />
-        </HeroWrapper>
-      ) : null}
-      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        ))}
+      </PostWrapper>
     </Container>
   )
 }
 
-const HeroWrapper = styled.div`
-  margin-top: 288px;
-  text-align: center;
+const PostWrapper = styled.div`
+  margin-top: 488px;
 `

@@ -11,7 +11,7 @@ export const PageContentTemplate = (props: Props) => {
     <section>
       <Container>
         <CoverImageWrapper>
-          <CoverImage title={props.title} url={props.coverImage.url} />
+          <CoverImage title={props.title} url={props.coverImage.url} style={props.coverImage.style} />
         </CoverImageWrapper>
         <Title style={{ marginTop: 50 }}>{props.title}</Title>
         <PostBodyWrapper>
