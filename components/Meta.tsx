@@ -18,11 +18,8 @@ export const Meta = () => {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={''} />
 
-      <meta
-        name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
-      />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta name="description" content={`Your place to relax, your place to be.`} />
+      <meta property="og:image" content={'https://www.moonlighthealing.net/logo.png'} />
     </Head>
   )
 }
